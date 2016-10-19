@@ -1,14 +1,17 @@
 
 public class Feld {
+	
+	int x;
+	int y; 
 
 	
-	public void getX(){
+	public int getX(){
+		return this.x;
 		
 	}
 	
-	public void getY(){
+	public int getY(){
+		return this.y;
 		
 	}
-
-
 }
