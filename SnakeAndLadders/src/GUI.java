@@ -12,8 +12,5 @@ public class GUI {
 	public void aktualisieren(){
 		
 		
-	}
-
-	
-
+	}	
 }
