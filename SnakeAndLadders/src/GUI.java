@@ -1,8 +1,12 @@
 
 public class GUI {
 	
-	
-	
+
+
+	public GUI(){
+		
+	}
+
 	public void erstellen(){
 		
 	}
@@ -11,8 +15,6 @@ public class GUI {
 		
 	}
 
-	public GUI(){
-		
-	}
+	
 
 }
