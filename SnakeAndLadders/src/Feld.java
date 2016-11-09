@@ -1,14 +1,23 @@
 
 public class Feld {
-
 	
-	public void getX(){
+	int x;
+	int y; 
+	
+	public void setX(){
 		
 	}
 	
-	public void getY(){
+	public void setY(){
 		
 	}
-
-
+	public int getX(){
+		return this.x;
+		
+	}
+	
+	public int getY(){
+		return this.y;
+		
+	}
 }
