@@ -14,4 +14,12 @@ public class GUI {
 		
 		
 	}	
+	
+	public void textdateieinlesen(int spielfeldnummer){
+		
+		/*
+		 * 
+		 * herausgelesene Positionen in Schlange/Leitern setten
+		 */
+	}
 }
