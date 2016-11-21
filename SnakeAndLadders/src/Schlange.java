@@ -1,4 +1,4 @@
 
-public class Schlange extends  Feld{
+public class Schlange extends  Position{
 
 }

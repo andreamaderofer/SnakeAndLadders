@@ -2,7 +2,7 @@
 public class Main {
 
 	public static void main(String[] args) {
-		Login logi=new Login();
+		//Login logi=new Login();
 		GUI gui=new GUI();
 	}
 }

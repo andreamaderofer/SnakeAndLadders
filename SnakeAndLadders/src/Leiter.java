@@ -1,5 +1,5 @@
 
-public class Leiter extends Feld {
+public class Leiter extends Position {
 	
 	
 

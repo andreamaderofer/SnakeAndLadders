@@ -1,19 +1,14 @@
 
-public class Feld {
+public class Position {
 
 	private int x;
 	private int y;
 
-	public void setX() {
-	}
-
-	public void setY() {
+	public void setPosition(int x, int y){
+		this.x=x;
+		this.y=y;
 	}
 	
-	public void setPosition(){
-		
-	}
-
 	public int getX() {
 		return this.x;
 	}
