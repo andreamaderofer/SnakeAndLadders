@@ -15,4 +15,13 @@ public class Benutzer {
 		
 	}
 
+	public Benutzer() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Color getColor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
