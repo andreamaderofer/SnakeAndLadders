@@ -41,7 +41,8 @@ public class GUI extends JFrame implements ActionListener {
 		}
 		repaint();
 	}
-
+	
+	//zum Zeichnen der Schlangen als blaue Linien
 	private class Ladder extends JPanel {
 		int feld = 0;
 		int x = 0;
@@ -62,11 +63,18 @@ public class GUI extends JFrame implements ActionListener {
 			g.setColor(Color.blue);
 			g.drawLine(x, y, endex, endey);
 			this.setBackground(Color.LIGHT_GRAY);
+			this.setBorder(BorderFactory.createLineBorder(Color.black));
 			g.setColor(Color.BLACK);
+			if(this.getInsets().equals(labelSp1)){
+				labelSp1.setForeground(Color.RED);
+				this.add(labelSp1);
+				repaint();
+			}
 			g.drawString("" + feld, 20, 20);
 		}
 	}
-
+	
+	//zum Zeichnen der Schlangen als Rote Linien
 	private class Snake extends JPanel {
 		int feld = 0;
 		int x = 0;
@@ -87,6 +95,12 @@ public class GUI extends JFrame implements ActionListener {
 			g.setColor(Color.red);
 			g.drawLine(x, y, endex, endey);
 			this.setBackground(Color.LIGHT_GRAY);
+			this.setBorder(BorderFactory.createLineBorder(Color.black));
+			if(this.getInsets().equals(labelSp1)){
+				labelSp1.setForeground(Color.RED);
+				this.add(labelSp1);
+				repaint();
+			}
 			g.setColor(Color.BLACK);
 			g.drawString("" + feld, 20, 20);
 		}
@@ -119,6 +133,7 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Ladder(feld, 25, 25, 100, 100)));
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
 					leiter = new Leiter(i, a, spielfeld[i][a]);
 					leitern.add(leiter);
@@ -129,6 +144,7 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Ladder(feld, 0, 0, 100, 100)));
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
 					continue;
 				}
@@ -137,6 +153,7 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Ladder(feld, 0, 0, 25, 25)));
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
 					leiter = new Leiter(i, a, spielfeld[i][a]);
 					leitern.add(leiter);
@@ -147,6 +164,7 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Ladder(feld, 50, 0, 0, 50)));
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
 					leiter = new Leiter(i, a, spielfeld[i][a]);
 					leitern.add(leiter);
@@ -157,6 +175,7 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Ladder(feld, 50, 0, 0, 50)));
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
 					leiter = new Leiter(i, a, spielfeld[i][a]);
 					leitern.add(leiter);
@@ -167,6 +186,7 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Ladder(feld, 50, 0, 0, 50)));
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
 					continue;
 				}
@@ -176,6 +196,7 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Snake(feld, 25, 25, 100, 100)));
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
 					schlange = new Schlange(i, a, spielfeld[i][a]);
 					schlangen.add(schlange);
@@ -186,6 +207,7 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Snake(feld, 0, 0, 100, 100)));
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
 					continue;
 				}
@@ -194,6 +216,7 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Snake(feld, 0, 0, 25, 25)));
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
 					schlange = new Schlange(i, a, spielfeld[i][a]);
 					schlangen.add(schlange);
@@ -205,6 +228,7 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Snake(feld, 50, 0, 0, 50)));
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
 					schlange = new Schlange(i, a, spielfeld[i][a]);
 					schlangen.add(schlange);
@@ -215,6 +239,9 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Snake(feld, 50, 0, 0, 50)));
+					schlange = new Schlange(i, a, spielfeld[i][a]);
+					schlangen.add(schlange);					
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
 					continue;
 				}
@@ -223,9 +250,8 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a] = new JPanel();
 					labelfeld[i][a].setSize(50, 50);
 					pan.add(labelfeld[i][a].add(new Snake(feld, 50, 0, 0, 50)));
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					feld++;
-					schlange = new Schlange(i, a, spielfeld[i][a]);
-					schlangen.add(schlange);
 					continue;
 				}
 
@@ -236,6 +262,7 @@ public class GUI extends JFrame implements ActionListener {
 					labelfeld[i][a].add(lab);
 					labelfeld[i][a].setBackground(Color.LIGHT_GRAY);
 					labelfeld[i][a].setSize(50, 50);
+					labelfeld[i][a].setBorder(BorderFactory.createLineBorder(Color.black));
 					pan.add(labelfeld[i][a]);
 					feld++;
 					continue;
@@ -247,49 +274,37 @@ public class GUI extends JFrame implements ActionListener {
 		frame.getContentPane().add(wuefel, BorderLayout.SOUTH);
 		frame.setVisible(true);
 		repaint();
-		aktualisieren();
 	}
 
 	int ergebnis = 0;
-
+	boolean ersterZug=false;
+	
 	public void actionPerformed(ActionEvent e) {
-		ergebnis = wuerfeln();
-		//System.out.println(ergebnis);
-		// aktualisieren();
+		ergebnis = wuerfeln()-1;
+		System.out.println(ergebnis);
+		aktualisieren();
 	}
 
-	public void aktualisieren() throws InterruptedException {
-		spieler1.setPosition(0, 0);
-		int zaehler = -1;
-		labelSp1.setForeground(Color.RED);
-		labelfeld[spieler1.getX()][spieler1.getY()].add(labelSp1);
-		repaint();
-		boolean abbruch = false;
-		while (true) {
-			zaehler = 0;
-			abbruch = false;
-			ergebnis = wuerfeln();
-			for (int i = 0; i < spielfeld.length; i++) {
-				for (int a = 0; a < spielfeld.length; a++) {
-					if (zaehler == ergebnis) {
-						zaehler = 0;
-						abbruch = true;
-					}
-					zaehler++;
-					labelSp1.setForeground(Color.RED);
-					pan.add(labelfeld[0][0].add(labelSp1));
-					repaint();
-				}
-				if (abbruch) {
-					break;
-				}
-			}
-			Thread.sleep(1000);
-			if (abbruch) {
-				break;
-			}
-
+	public void aktualisieren() {
+		int differenz=0;
+		if(ersterZug){
+			spieler1.setPosition(0, 0);
+			ersterZug=true;
 		}
+		labelSp1.setForeground(Color.RED);
+		if(spieler1.getX()+ergebnis<10){
+			labelfeld[spieler1.getY()][spieler1.getX()+ergebnis].add(labelSp1);
+			spieler1.setX(spieler1.getX()+ergebnis);
+		}else{
+			differenz=spieler1.getX();
+			System.out.println();
+			labelfeld[spieler1.getY()+1][spieler1.getX()].add(labelSp1);
+			spieler1.setX(spieler1.getX()+ergebnis);
+			spieler1.setY(spieler1.getY()+1);
+		}
+
+		pan.repaint();
+		pan.repaint();
 	}
 
 	public void textdateieinlesen(int spielfeldnummer) {
@@ -300,7 +315,7 @@ public class GUI extends JFrame implements ActionListener {
 	}
 
 	public int wuerfeln() {
-		int augenzahl = (int) ((Math.random() * 12) + 1);
+		int augenzahl = (int) ((Math.random() * 6) + 1);
 		return augenzahl;
 	}
 
